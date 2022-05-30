@@ -41,11 +41,10 @@ def ncuwlan():
             time.sleep(12)
         else:
             print('something wrong')
-            print(res[0:5] + str(da))
+            print(res[:5] + str(da))
     except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError,requests.exceptions.ReadTimeout):
         print('ncuwlan can not be connected becuuse timeout')
     finally:
-        pass
         return t1
 
 
@@ -59,4 +58,4 @@ while True:
         t1 = ncuwlan()
         t2 = time.time()
         t3 = time.ctime()
-        print('{}s connected with{},now time is {}'.format(str(round(t2-t1,2)),t3,aurl))
+        print(f'{str(round(t2-t1,2))}s connected with{t3},now time is {aurl}')

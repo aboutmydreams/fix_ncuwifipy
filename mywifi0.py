@@ -37,7 +37,7 @@ def ncuwlan():
         time.sleep(12)
     else:
         print('something wrong')
-        print(res[0:5] + str(da))
+        print(res[:5] + str(da))
     return t1
 
 
